@@ -1,0 +1,23 @@
+{
+  "name": "tripmate-ai",
+  "version": "1.0.0",
+  "description": "Multi-agent travel planner (Flight, Hotel, Itinerary, Final Response agents) built with LangGraph.js",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node src/db/init.js"
+  },
+  "dependencies": {
+    "@langchain/langgraph": "^0.2.19",
+    "@langchain/core": "^0.3.18",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "groq-sdk": "^0.7.0",
+    "pg": "^8.13.1",
+    "uuid": "^9.0.1"
+  }
+}
