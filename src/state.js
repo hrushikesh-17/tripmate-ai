@@ -34,6 +34,12 @@ export const TravelState = Annotation.Root({
     default: () => null,
   }),
 
+  // A famous/representative image of the destination, fetched from Wikipedia
+  destination_image: Annotation({
+    reducer: (old, next) => next ?? old,
+    default: () => null,
+  }),
+
   // Output of the Itinerary Agent
   itinerary: Annotation({
     reducer: (old, next) => next ?? old,

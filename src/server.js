@@ -43,6 +43,7 @@ app.post("/plan-trip", async (req, res) => {
       flight_results: result.flight_results,
       hotel_results: result.hotel_results,
       itinerary: result.itinerary,
+      destination_image: result.destination_image,
       errors: result.errors,
     });
   } catch (err) {
