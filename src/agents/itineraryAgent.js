@@ -27,7 +27,8 @@ export async function itineraryAgent(state) {
   const itineraryText = await askGroq(
     `You are a travel planner. Build a day-wise itinerary as strict JSON only,
 no prose, no markdown fences, shape:
-{"days": [{"day": 1, "theme": "string", "activities": ["string", ...]}]}`,
+{"days": [{"day": 1, "theme": "string", "activities": ["string", ...]}]}
+If any activity mentions a cost, use Indian Rupees (₹) only — never USD or any other currency.`,
     `Destination: ${destination}
 Trip length: ${tripLength} days
 Candidate places:\n${placesText}
