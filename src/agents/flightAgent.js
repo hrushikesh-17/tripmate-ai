@@ -1,6 +1,6 @@
 import { searchFlights } from "../tools/flightApi.js";
 import { tavilySearch } from "../tools/tavily.js";
-import { askGroq } from "../tools/groq.js";
+import { askLLM } from "../tools/llm.js";
 import { getDestinationImage } from "../tools/wikipedia.js";
 
 /**
@@ -19,7 +19,7 @@ export async function flightAgent(state) {
   const { user_query } = state;
 
   // Extract structured fields from the free-text query with the LLM.
-  const extraction = await askGroq(
+  const extraction = await askLLM(
     `Extract travel details from the user's message as strict JSON only,
 no prose, no markdown fences. Use this shape:
 {"origin": "<IATA code or city or null>", "destination": "<IATA code or city or null>",

@@ -1,4 +1,4 @@
-import { askGroq } from "../tools/groq.js";
+import { askLLM } from "../tools/llm.js";
 import { getExchangeRatesToInr } from "../tools/currency.js";
 
 /**
@@ -53,7 +53,7 @@ Show ONLY the final ₹ figure — never a dual currency like "$160 (₹15,360)"
 or "A$50 (₹3,150)". Do not mention the original currency, dollars, or the
 conversion process anywhere in your response — just the clean ₹ amount.`;
 
-  const final_response = await askGroq(
+  const final_response = await askLLM(
     "You are TripMate AI, a helpful travel planning assistant for Indian travelers. All prices you output must be in Indian Rupees (₹) only — never USD, AUD, EUR, or any other currency.",
     prompt,
     8000 // higher limit — long trips (e.g. 20-30 days) need more room to avoid getting cut off mid-response
